@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>杨叔儿</title>
+<meta name="keywords" content="关键词,关键词,关键词,关键词,5个关键词" />
+<meta name="description" content="网站简介，不超过80个字" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/static/css/index.css" rel="stylesheet">
+<script src="/static/js/jquery.min.js" ></script>
+<script src="/static/js/comm.js" ></script>
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<header>
+  <div class="logo" style="color: darkgray">杨叔儿的博客</div>
+  <div class="top-nav">
+    <h2 id="mnavh"><span class="navicon"></span></h2>
+    <ul id="nav">
+      <li><a href="/index">首页</a></li>
+      <li><a href="/list">文章列表</a></li>
+{#      <li><a href="/info">文章详细</a></li>#}
+    </ul>
+  </div>
+  <div class="search">
+{#    <form action="/e/search/index.php" method="post" name="searchform" id="searchform">#}
+{#      <input name="keyboard" id="keyboard" class="input_text" value="搜索你喜欢的" style="color: rgb(153, 153, 153);" onfocus="if(value=='搜索你喜欢的'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='搜索你喜欢的'}" type="text">#}
+{#      <input name="show" value="title" type="hidden">#}
+{#      <input name="tempid" value="1" type="hidden">#}
+{#      <input name="tbname" value="news" type="hidden">#}
+{#      <input name="Submit" class="input_submit" value="" type="submit">#}
+{#    </form>#}
+  </div>
+</header>
+<aside class="side">
+  <div class="about"> <i><img src="/static/image/WechatIMG2.jpeg"></i>
+    <p >个人简介:&nbsp;&nbsp;95后退伍兵转职野生程序员，会的不多。大神路过请批评指正。</p>
+  </div>
+  <div class="weixin"> <img src="/static/image/yangshuer.jpg">
+    <p >欢迎撩骚</p>
+  </div>
+</aside>
+<main>
+  <div class="main-content">
+    <div class="welcome"> 您好，欢迎您访问杨叔儿的博客！ </div>
+    <div class="picbox">
+      <h2 class="pictitle">推荐</h2>
+      <!--box begin-->
+      <div class="Box_con"> <span class="btnl btn" id="btnl"></span> <span class="btnr btn" id="btnr"></span>
+        <div class="conbox" id="BoxUl">
+          <ul>
+            <li class="cur"><a href="/list_redis"><img src="/static/image/redis.jpg" alt=""/>
+              <p>redis学习</p>
+              </a> </li>
+            <li class="cur"><a href="/list_numpy"><img src="/static/image/numpy.jpeg" alt=""/>
+              <p>numpy学习</p>
+              </a> </li>
+            <li class="cur"><a href="/list_sql"><img src="/static/image/sql.jpg" alt=""/>
+              <p>SQL语句学习</p>
+              </a> </li>
+            <li class="cur"><a href="/list_pandas"><img src="/static/image/pandas.png" alt=""/>
+              <p>pandas学习</p>
+              </a> </li>
+            <li class="cur"><a href="/list_django"><img src="/static/image/django.png" alt=""/>
+              <p>Django学习</p>
+            <li class="cur"><a href="/list_python"><img src="/static/image/python3.jpg" alt=""/>
+              <p>python学习</p>
+              </a> </li>
+            <li class="cur"><a href="/list_js "><img src="/static/image/js.jpg" alt=""/>
+              <p>js学习</p>
+              </a> </li>
+            <li class="cur"><a href="/list_linux"><img src="/static/image/linux.jpeg" alt=""/>
+              <p>Linux学习</p>
+              </a> </li>
+{#            <li class="cur"><a href="/{# linux列表页面 #}{#"><img src="/static/image/scrapy.jpg" alt=""/>#}
+{#              <p>scrapy学习</p>#}
+{#              </a> </li>#}
+          </ul>
+        </div>
+      </div>
+      <!--box end--> 
+    </div>
+    <div class="newsbox">
+      <section>
+        <div class="news">
+          <h2 class="newstitle"><span><a href="/xxrjadd">更多</a></span><b>学习日记</b></h2>
+          <ul>
+              {% for i in xxrj %}
+                  <li><a href="/infos_xxrj/{{ i.id }}"><span>{{ i.date }}</span>{{ i.title }}</a></li>
+              {% endfor %}
+          </ul>
+        </div>
+      </section>
+      <section>
+        <div class="news">
+          <h2 class="newstitle"><span><a href="/suibi">更多</a></span><b>随笔</b></h2>
+          <ul>
+              {% for i in sb %}
+                  <li><a href="/infos_sb/{{ i.id }}"><span>{{ i.date }}</span>{{ i.title }}</a></li>
+              {% endfor %}
+          </ul>
+        </div>
+      </section>
+      <section>
+        <div class="news">
+          <h2 class="newstitle"><span><a href="/zaji">更多</a></span><b>杂记</b></h2>
+          <ul>
+              {% for i in zj %}
+                  <li><a href="/infos_zj/{{ i.id }}"><span>{{ i.date }}</span>{{ i.title }}</a></li>
+              {% endfor %}
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+    <div class="blank"></div>
+</main>
+<a href="#" class="cd-top cd-is-visible">Top</a>
+</body>
+</html>
